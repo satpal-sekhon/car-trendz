@@ -28,7 +28,7 @@ export default function Footer() {
                             </Box>
                         </Box>
                     </Grid>
-                    <h1>hello</h1>
+                    
                     <Grid item xs={3} className='footer-head items-center justify-center hidden lg:flex' >
                         <Typography variant='body1' className='text-white mr-10' fontWeight={'600'}>Connect with us</Typography>
                         <Image src={'/facebook.png'} className='mr-10' width={'33'} height={'33'} alt=''></Image>
