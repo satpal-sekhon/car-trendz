@@ -133,7 +133,7 @@ export default function DrawerAppBar(props: Props) {
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
                             <Link href={item.link} key={item.link}>
-                                <Button endIcon={<KeyboardArrowDownIcon/>} className='text-white hover:bg-white hover:text-blue-900'>
+                                <Button className='text-white hover:bg-white hover:text-blue-900'>
                                     {item.name}
                                 </Button>
                             </Link>
