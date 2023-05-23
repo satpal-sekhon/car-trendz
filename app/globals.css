@@ -1,0 +1,560 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+} */
+*{
+  font-family: 'Poppins', sans-serif!important;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+.border-0 {
+  border: 0px;
+}
+
+.box-shadow-none {
+  box-shadow: none;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.ml-20 {
+  margin-left: 30px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.py-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.py-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+.px-30 {
+  padding: 0 30px;
+}
+
+.my-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.my-20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.my-30 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.px-30 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.my-40 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.my-60 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.c-pb-70 {
+  padding-bottom: 70px;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.bg-primary {
+  background-color: #1976d2;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-transparent.scrolled {
+  background-color: #00000060;
+}
+
+.banner-image {
+  height: 100%;
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+  margin-top: 64px;
+}
+
+/* .bg-primary{
+  
+} */
+
+.card-data {
+  width: 60%;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 6px #999;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+
+}
+
+.card-data-id {
+  background-color: #2e2e83;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 50%;
+}
+
+/* Topbar css */
+.Topbar {
+  background-color: #fff;
+  box-shadow: none;
+  border-bottom: 1px solid #999;
+}
+
+.topbar-item {
+  text-transform: capitalize;
+  font-size: .75rem;
+  margin: 0px;
+  color: #000;
+  display: block;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.topbar-login-btn {
+  margin-left: 10px;
+}
+
+.dropdown-btn {
+  background-color: transparent;
+  color: #000;
+}
+
+.dropdown-btn:hover {
+  background-color: transparent;
+  color: #000;
+}
+
+.headermiddle-logo-2 {
+  /* display: flex; */
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.box-shadow-1 {
+  box-shadow: 0 0 5px rgba(43, 51, 149, 0.27);
+}
+
+.car-detail-form {
+  padding: 40px 20px;
+  border-radius: 10px;
+}
+
+.text-gray {
+  color: #636363;
+}
+
+.flex-class {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.footer-text {
+  color: #000000;
+  outline: none;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.icon-wrapper {
+  text-align: center;
+}
+
+.bg-success {
+  background-color: #2e7d32;
+}
+
+/* logincss */
+.loginwrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0px;
+}
+
+.loginIcon {
+  font-size: 50px;
+}
+
+.loginIconWrapper {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.emailtextfield {
+  margin-bottom: 20px;
+}
+
+.passwordtextfield {
+  margin-bottom: 20px;
+}
+
+.forgotpasswordwrapper {
+  text-align: end;
+}
+
+.socialIconwrapper {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.slider-wrapper .slider {
+  height: 380px;
+}
+
+.w-300 {
+  width: 250px;
+}
+
+.c-border-radius {
+  border-radius: 4px 0px 0px 4px;
+}
+
+.c-border-dotted {
+  border-top: 1px dotted #2b3395;
+  border-right: 1px dotted #2b3395;
+  border-bottom: 1px dotted #2b3395;
+}
+
+.c-tabs {
+  max-width: 120px;
+  color: #fff;
+  background-color: #ec383b;
+  opacity: 1;
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: 4px 4px 0 0;
+}
+
+.Mui-selected.c-tabs {
+  background-color: #2b3395;
+
+}
+
+.background-transparent {
+  background-color: transparent;
+}
+
+.border-1 {
+  border: 1px solid #999;
+}
+
+.border-radius-4 {
+  border-radius: 4px;
+}
+
+.bg-darkblue {
+  background-color: #2b3395;
+  color: #fff;
+}
+
+.text-darkblue {
+  color: #2b3395;
+}
+
+.bg-darkred {
+  background-color: #ec383b;
+}
+
+.banner-wrapper {
+  background: #ebedff;
+  min-height: 200px;
+  float: left;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.car-detail-form-home {
+  position: relative;
+  top: -30px;
+  background-color: #fff;
+}
+
+.width-30 {
+  width: 30%;
+}
+
+.width-40 {
+  width: 40%;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.section-bg-color {
+  background-color: #ededed;
+}
+
+.checked-start-color {
+  color: red;
+}
+
+.btn-float-right {
+  background-color: #EC383B;
+  border-radius: 20px;
+}
+
+.btn-float-right:hover {
+  background-color: #e32326;
+}
+
+.btn-darkblue {
+  background-color: #2b3395;
+  color: #fff;
+  border: 2px solid #2b3395;
+
+}
+
+.btn-darkblue:hover {
+  background-color: transparent;
+  color: #2b3395;
+
+}
+
+.btn-darkblue-outline {
+  background-color: #fff;
+  color: #2b3395;
+  border: 2px solid #2b3395;
+
+}
+
+.btn-darkblue-outline:hover {
+  background-color: #2b3395;
+  color: #fff;
+
+}
+
+.brand-list {
+  max-height: 420px;
+  overflow-y: scroll;
+}
+
+.c-list-item:last-child {
+  border-bottom: none;
+}
+
+.btn-wrapper-hart-shear {
+  border: 1px solid #999;
+  display: inline-block;
+  border-radius: 30px;
+}
+
+.c-ml-0 {
+  margin-left: 0px !important;
+}
+
+.c-font-size-18 {
+  font-size: 18px;
+}
+
+.admin-modal {
+  font-size: 40px;
+  line-height: 38px;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.admin-dialog>div {
+  max-width: 600px;
+  width: 100%;
+  background-color: #ededed;
+  border-radius: 6px;
+}
+
+.facbook-icon {
+  background: #263893;
+}
+
+.twitter-icon {
+  background: #009cf6;
+}
+
+.google-icon {
+  background: #e42107;
+}
+.social-media-modalicon{
+  width: 38px;
+  height: 38px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50px;
+  color: #fff;
+  line-height: 38px;
+  font-size: 1.25rem;
+  padding: 5px;
+}
+
+/* Dashboard css */
+.content-wrapper{
+  margin-top: 64px;
+  margin-left: 240px;
+}
+.btn-add-product{
+  background-color: rgba(10, 179, 156, 0.1);
+  color: #0ab39c;
+}
+.btn-add-product:hover{
+  background-color: #09a18c;
+  color: #fff;
+}
+.c-green-color-icon{
+  background-color: rgba(10, 179, 156, 0.1);
+  color: #0ab39c;
+}
+.c-text-green{
+  color: #0ab39c;
+}
+.c-text-red{
+  color: rgb(240, 101, 72);
+}
+.c-dashboard-bg-color{
+  background-color: #ebedff;
+}
+.c-text-gray{
+  color: #495057;
+}
+.c-text-blue{
+  color: #405189;
+}
+
+.c-bg-color-profile::before{
+  content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: .7;
+    background: #405189;
+    background: linear-gradient(to top,#171e32,#405189);
+    z-index: 1;
+}
+.label-wrapper label{
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 0 4px;
+}
+
+@media screen and (max-width:768px) {
+  .banner-image {
+    height: 300px;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .content-wrapper{
+    margin-top: 64px;
+    margin-left: 0px;
+  }
+
+}
