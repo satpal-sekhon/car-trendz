@@ -258,7 +258,7 @@ export default function Page() {
                             <Grid item xs={12} md={6} className='text-right'>
                                 <button
                                     type="button"
-                                    className="bg-green-600 text-white hover:bg-green-800 py-1 px-3 rounded"
+                                    className="bg-darkblue text-white hover:bg-blue-700 py-1 px-3 rounded"
                                     onClick={uploadFiles}
                                 >
                                     Upload

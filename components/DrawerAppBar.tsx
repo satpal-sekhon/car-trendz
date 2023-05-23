@@ -17,13 +17,13 @@ import Link from 'next/link';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
+  cursor:'pointer',
 //   backgroundColor: alpha(theme.palette.common.white, 0.15),
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
@@ -47,9 +47,11 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  cursor:'pointer',
 }));
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
+    cursor:'pointer',
     '& .MuiInputBase-input': {
       padding: theme.spacing(1, 1, 1, 0),
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
@@ -72,14 +74,6 @@ interface Props {
 
 const drawerWidth = 240;
 const navItems = [
-    // { name: 'Buy', link: 'http://localhost:3000/home' },
-    // { name: 'By City', link: 'http://localhost:3000/about' },
-    // { name: 'By Model', link: 'http://localhost:3000/contact' },
-    // { name: 'By Price', link: 'http://localhost:3000/blog' },
-    // { name: 'SMART FINANCE', link: 'http://localhost:3000/signup' },
-    // { name: 'SHOWROOM LOCATOR', link: 'http://localhost:3000/signup' },
-    { name: 'Login', link: 'http://localhost:3000/login' },
-    { name: 'Signup', link: 'http://localhost:3000/signup' },
     { name: 'SELL', link: 'http://localhost:3000/sell' },
     { name: 'Buy Car', link: 'http://localhost:3000/buycar' },
     { name: 'Car Detail', link: 'http://localhost:3000/cardetail' },
@@ -144,6 +138,7 @@ export default function DrawerAppBar(props: Props) {
                             <SearchIcon />
                         </SearchIconWrapper>
                         <StyledInputBase
+                            className='cursor-pointer-wrapper'
                             placeholder="Search…"
                             inputProps={{ 'aria-label': 'search' }}
                         />

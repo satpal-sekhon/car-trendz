@@ -544,7 +544,9 @@ body {
   border-radius: 4px;
   padding: 0 4px;
 }
-
+.cursor-pointer-wrapper input{
+  cursor: pointer;
+}
 @media screen and (max-width:768px) {
   .banner-image {
     height: 300px;

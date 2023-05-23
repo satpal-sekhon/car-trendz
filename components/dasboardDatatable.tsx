@@ -10,7 +10,7 @@ export default function UserList() {
             field: "user",
             headerName: "User",
             width: 200,
-            renderCell: (params: any) => {
+            renderCell: (params: any) => {  
                 console.log(params);
                 return (
                     <>

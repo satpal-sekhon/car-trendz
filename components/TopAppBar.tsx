@@ -31,7 +31,6 @@ function TopAppBar() {
       className="Topbar hidden md:block"
       sx={{ backgroundColor: "#fff", boxShadow: "none" }}
     >
-      {/* <Container maxWidth="xl"> */}
       <Toolbar
         className="mx-2"
         disableGutters
@@ -62,10 +61,10 @@ function TopAppBar() {
             </Button>
           ))}
         </Box>
-        <Box sx={{ flexGrow: 0 }}>
+        {/* <Box sx={{ flexGrow: 0 }}>
           <SplitButton index1="Hindi" index2="English" />
-        </Box>
-        <Box>
+        </Box> */}
+        {/* <Box>
           <Button
             size="small"
             className="topbar-login-btn bg-gray-100 border-gray-500"
@@ -75,9 +74,8 @@ function TopAppBar() {
           >
             Login
           </Button>
-        </Box>
+        </Box> */}
       </Toolbar>
-      {/* </Container> */}
     </AppBar>
   );
 }

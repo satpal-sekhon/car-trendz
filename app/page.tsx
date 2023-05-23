@@ -444,7 +444,7 @@ export default function Home() {
         </Container>
         <div className='section-bg-color'>
           <Container maxWidth='xl' >
-            <Grid container className='py-20 my-20'>
+            <Grid container className='py-20'>
               <Grid xs={12} lg={6} item >
                 <Typography variant='h4' fontSize={'24px'} fontWeight={'600'} className='pb-4'>Review & Recommendation</Typography>
                 <Grid container>
@@ -452,9 +452,9 @@ export default function Home() {
                     <Card>
                       <CardContent>
                         <Box className='flex-Class items-start pb-2'>
-                        <Stack spacing={1}>
-                                                        <Rating className='text-darkblue' name="half-rating" defaultValue={2.5} precision={0.5} />
-                                                    </Stack>
+                          <Stack spacing={1}>
+                            <Rating className='text-darkblue' name="half-rating" defaultValue={2.5} precision={0.5} />
+                          </Stack>
                         </Box>
                         <Typography variant='body2' className='text-gray'>
                           {

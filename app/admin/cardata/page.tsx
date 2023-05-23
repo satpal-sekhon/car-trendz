@@ -18,6 +18,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Card, CardHeader } from "@mui/material";
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import ScrollToTop from '@/components/ScrollToTop';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 
 
@@ -159,9 +160,15 @@ export default function Page() {
       <ResponsiveDrawer />
       <div className='content-wrapper p-4 c-dashboard-bg-color'>
         <Grid container spacing={2} className='mt-2'>
-          <Grid item xs={12} md={12}>
+
+          <Grid item xs={12} md={6}>
             <Typography variant='body1' className='font-medium'>Good Morning, Anna!</Typography>
             <Typography variant='caption' className='text-gray'>Here what happening with your store today.</Typography>
+          </Grid>
+          <Grid item xs={12} md={6} className='text-right'>
+            <Link href={'http://localhost:3000/admin/carlist'}>
+              <Button variant="contained" className='btn-add-product capitalize shadow-none'><AddCircleOutlineIcon className='mr-2 text-sm' /> Add New listing</Button>
+            </Link>
           </Grid>
 
         </Grid>
