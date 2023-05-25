@@ -18,6 +18,8 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Card, CardHeader } from "@mui/material";
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import ScrollToTop from '@/components/ScrollToTop';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import Footer from '@/components/dasboardFooter';
 
 
 
@@ -157,11 +159,17 @@ export default function Page() {
   return (
     <div>
       <ResponsiveDrawer />
-      <div className='content-wrapper p-4 c-dashboard-bg-color'>
+      <div className='content-wrapper p-4 c-dashboard-bg-color h-full'>
         <Grid container spacing={2} className='mt-2'>
-          <Grid item xs={12} md={12}>
+
+          <Grid item xs={12} md={6}>
             <Typography variant='body1' className='font-medium'>Good Morning, Anna!</Typography>
             <Typography variant='caption' className='text-gray'>Here what happening with your store today.</Typography>
+          </Grid>
+          <Grid item xs={12} md={6} className='text-right'>
+            <Link href={'http://localhost:3000/admin/carlist'}>
+              <Button variant="contained" className='bg-darkblue hover:bg-blue-800 capitalize shadow-none'><AddCircleOutlineIcon className='mr-2 text-lg' /> Add New listing</Button>
+            </Link>
           </Grid>
 
         </Grid>
@@ -257,7 +265,7 @@ export default function Page() {
               <Card className=' bg-white'>
                 <Stack direction={'row'} className='justify-between bg-white py-2 px-4 mt-2'>
                   <Typography variant='body1' className='font-semibold'>Car Order Details</Typography>
-                  <Button className='bg-blue-100 px-4 text-sm capitalize hover:bg-blue-400 hover:text-white' startIcon={<PostAddIcon />}>Generate Report</Button>
+                  <Button className='bg-darkblue px-4 text-sm capitalize hover:bg-blue-700 hover:text-white' startIcon={<PostAddIcon />}>Generate Report</Button>
                 </Stack>
                 <DataGrid
                   autoHeight
@@ -275,6 +283,7 @@ export default function Page() {
           </Grid>
         </Box>
       </div>
+      <Footer/>
       <ScrollToTop />
     </div>
   )

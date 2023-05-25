@@ -24,7 +24,7 @@ export default function MediaCard3({ imageUrl, cardTitle, description}: MediaCar
                 className='object-fill'
             />
             <CardContent>
-                <Typography gutterBottom fontWeight={600} variant="h5" component="div" className='text-darkblue'>
+                <Typography gutterBottom fontWeight={600} variant="h5" component="div">
                     {cardTitle}
                 </Typography>
                 <Typography gutterBottom variant="body2" component="p" className='text-gray'>

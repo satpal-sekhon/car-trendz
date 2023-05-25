@@ -10,7 +10,7 @@ import Link from 'next/link';
 export default function Footer() {
     return (
         <>
-            <Box className="bg-darkblue px-4">
+            <Box className="bg-darkblue p-4">
                 <Grid container >
                     <Grid item xs={12} lg={9} className='footer-head flex-class justify-start' >
                         <Box className='mr-2'>

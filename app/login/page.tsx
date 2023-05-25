@@ -1,14 +1,3 @@
-// import React from 'react'
-
-// const page = () => {
-//   return (
-//     <div>
-//       login
-//     </div>
-//   )
-// }
-
-// export default page
 "use client"
 import { Box, Button, TextField,Typography } from "@mui/material";
 import Grid from '@mui/material/Grid';
@@ -18,6 +7,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Image from "next/image";
 import { useState } from "react";
+import Link from "next/link";
 
 
 export default function Page() {
@@ -40,30 +30,24 @@ export default function Page() {
     }
   };
   return (
-    <>
-      <Grid container spacing={2} className="loginwrapper"  sx={{height:'100vh'}}>
-        <Grid item xs={10} sm={8} md={4}>
+    <div>
+      <Grid container spacing={2} className="loginwrapper shadow-md "  sx={{height:'100vh'}} >
+        <Grid item xs={10} sm={8} md={4} className=" p-2">
           <form action="" onSubmit={handleSubmit}>
-            <div className="loginIconWrapper"> <LoginIcon color="success" className="loginIcon"/></div>
+            <div className="loginIconWrapper"> <LoginIcon className="loginIcon text-darkblue"/></div>
             <Typography variant="h4" textAlign={'center'} mb={3}>Login</Typography>
             <Box>
-              <TextField className="emailtextfield" InputProps={{startAdornment: <EmailOutlinedIcon sx={{fontSize:'20px',mr:1,color:'#999'}}/>,}} size="small" color="secondary" id="email" label="Email" variant="outlined" autoComplete="off" fullWidth  placeholder="Enter Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+              <TextField className="emailtextfield" InputProps={{startAdornment: <EmailOutlinedIcon sx={{fontSize:'20px',mr:1,color:'#999'}}/>,}} size="small" color="primary" id="email" label="Email" variant="outlined" autoComplete="off" fullWidth  placeholder="Enter Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
             </Box>
             <Box>
-              <TextField className="passwordtextfield" InputProps={{startAdornment: <LockOutlinedIcon sx={{fontSize:'20px',mr:1,color:'#999'}}/>,}} size="small" color="secondary" id="Password" type="password" label="Password" variant="outlined" autoComplete="off" fullWidth  placeholder="Enter Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+              <TextField className="passwordtextfield" InputProps={{startAdornment: <LockOutlinedIcon sx={{fontSize:'20px',mr:1,color:'#999'}}/>,}} size="small" color="primary" id="Password" type="password" label="Password" variant="outlined" autoComplete="off" fullWidth  placeholder="Enter Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
             </Box>
-            <Button type="submit" className="loginbutton bg-success" variant="contained" color="success" fullWidth>Login</Button>
+            <Link href="http://localhost:3000/admin/dashboard">
+            <Button type="submit" className="loginbutton bg-darkblue hover:bg-blue-800" variant="contained" fullWidth>Login</Button>
+            </Link>
           </form>
-          <div className="forgotpasswordwrapper">
+          <div className="forgotpasswordwrapper mt-4">
             <Button href="#" variant="text" color="primary">Forgot Password</Button>
-          </div>
-          <div>
-            <Typography variant="body2" textAlign={'center'}>or Login using</Typography>
-            <div className="flex-class">
-              <Image className="mr-10" src="/567-5670137_round-facebook-logo-transparent-hd-png-download.png" width='30' height='30' alt="facbook icon"/>
-              <Image className="mr-10" src="/new-Instagram-logo-png-full-colour-glyph.png" width='30' height='30' alt="facbook icon"/>
-              <Image src="/pngtree-twitter-social-media-round-icon-png-image_6315985.png" width='30' height='30' alt="facbook icon"/>
-            </div>
           </div>
           <div>
             {
@@ -78,7 +62,7 @@ export default function Page() {
           </div>
         </Grid>
       </Grid>
-    </>
+    </div>
   );
 }
 

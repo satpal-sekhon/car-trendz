@@ -258,7 +258,7 @@ export default function Page() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        `<div className="shadow-lg bg-white px-7 h-full">
+        `<div className="shadow-lg bg-white px-7">
               <Stack direction={"row"} className="justify-between py-2">
                 <Typography variant="h6">Refine Your Result</Typography>
                 <Button
@@ -684,7 +684,7 @@ export default function Page() {
       <div className="px-6">
         <Grid container className="my-30 ">
           <Grid xs={12} lg={3} item className=" md:pr-6 hidden lg:block ">
-            <div className="shadow-lg bg-white px-7 h-full">
+            <div className="shadow-lg bg-white px-7 pb-7 sticky top-3 overflow-y-scroll max-w-[400px] w-full">
               <Stack direction={"row"} className="justify-between py-2">
                 <Typography variant="h6">Refine Your Result</Typography>
                 <Button

@@ -22,7 +22,7 @@ const ScrollToTop = () => {
         <div className="top-to-btm ">
             {" "}
             {showTopBtn && (
-                <div className="fixed bottom-14 right-4 bg-red-600 p-1 rounded text-white shadow-xl z-50 cursor-pointer">
+                <div className="fixed bottom-14 right-4 bg-darkblue p-1 rounded text-white shadow-xl z-50 cursor-pointer">
                     <ArrowUpwardIcon
                         className="icon-position icon-style"
                         onClick={goToTop}

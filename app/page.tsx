@@ -290,7 +290,7 @@ export default function Home() {
 
         <Box className='my-40 py-20' sx={{ backgroundColor: '#e8e8e8' }}>
           <Typography fontWeight={'600'} gutterBottom variant='h4' textAlign={'center'} className='py-2'>Top Rated</Typography>
-          <Container maxWidth="xl" >
+          <Container maxWidth="2xl" >
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6} md={4} lg={3}>
                 <MediaCard imageUrl={'card-1.jpg'} cardTitle='Swift' place='delhi' modelYear='2020' fuelType='petrol' travelled='50000' price='1,50,000' />
@@ -310,7 +310,7 @@ export default function Home() {
             </Grid>
           </Container>
         </Box>
-        <Container maxWidth="xl" className='p-0 lg:p-4' >
+        <Container maxWidth="2xl" className='p-0 lg:p-4' >
           <div className='banner-wrapper flex items-center'>
             <div className='bannerimage-wrapper lg:px-8'>
               <Image src="/banner-img.jpg" width={'450'} height={'232'} alt='banner Image'></Image>
@@ -322,7 +322,7 @@ export default function Home() {
             </div>
           </div>
           <div className='px-4 sm:px-14'>
-            <Grid container className='my-40 box-shadow-1 car-detail-form car-detail-form-home'>
+            <Grid container className='my-40 box-shadow-1 car-detail-form car-detail-form-home p-6 rounded-xl'>
               <Grid xs={12} item >
                 <Typography className='car-detail-form-heading md:pl-8' variant='h5'>Enter your car details for a hassle-free experience</Typography>
                 <Grid container >
@@ -368,7 +368,7 @@ export default function Home() {
             </Grid>
           </div>
         </Container>
-        <Container maxWidth='xl'>
+        <Container maxWidth='2xl'>
           <Grid container>
             <Grid xs={12} sm={6} md={7} lg={5} item className='px-2 my-2'>
               <Typography variant='h6' fontWeight={'600'} className='mb-4'>About True Value</Typography>
@@ -382,8 +382,8 @@ export default function Home() {
             <Grid xs={12} sm={6} md={5} lg={3} item className='px-2 my-2'>
               <div>
                 <Box className='flex items-start justify-between'>
-                  <Typography variant='h6' fontWeight={'600'} className='mb-4'>From the Auto Experts</Typography>
-                  <Button variant='contained' className='bg-darkblue'>view all</Button>
+                  <Typography variant='h6' fontWeight={'600'} className='mb-4'>From Auto Experts</Typography>
+                  <Button variant='contained' className='bg-darkblue whitespace-nowrap'>view all</Button>
                 </Box>
                 <Box className='flex-class align-items-start gap-5 mb-4' >
                   <Box className='width-40 flex-none '>
@@ -443,8 +443,8 @@ export default function Home() {
           </Grid>
         </Container>
         <div className='section-bg-color'>
-          <Container maxWidth='xl' >
-            <Grid container className='py-20 my-20'>
+          <Container maxWidth='2xl' >
+            <Grid container className='py-20'>
               <Grid xs={12} lg={6} item >
                 <Typography variant='h4' fontSize={'24px'} fontWeight={'600'} className='pb-4'>Review & Recommendation</Typography>
                 <Grid container>
@@ -452,9 +452,9 @@ export default function Home() {
                     <Card>
                       <CardContent>
                         <Box className='flex-Class items-start pb-2'>
-                        <Stack spacing={1}>
-                                                        <Rating className='text-darkblue' name="half-rating" defaultValue={2.5} precision={0.5} />
-                                                    </Stack>
+                          <Stack spacing={1}>
+                            <Rating className='text-darkblue' name="half-rating" defaultValue={2.5} precision={0.5} />
+                          </Stack>
                         </Box>
                         <Typography variant='body2' className='text-gray'>
                           {
@@ -471,11 +471,9 @@ export default function Home() {
                     <Card>
                       <CardContent>
                         <Box className='flex-Class items-start pb-2'>
-                          <Checkbox className='p-0' icon={<StarBorderIcon />} checkedIcon={<StarIcon className='text-darkblue' />} />
-                          <Checkbox className='p-0' icon={<StarBorderIcon />} checkedIcon={<StarIcon className='text-darkblue' />} />
-                          <Checkbox className='p-0' icon={<StarBorderIcon />} checkedIcon={<StarIcon className='text-darkblue' />} />
-                          <Checkbox className='p-0' icon={<StarBorderIcon />} checkedIcon={<StarIcon className='text-darkblue' />} />
-                          <Checkbox className='p-0' icon={<StarBorderIcon />} checkedIcon={<StarIcon className='text-darkblue' />} />
+                        <Stack spacing={1}>
+                            <Rating className='text-darkblue' name="half-rating" defaultValue={2.5} precision={0.5} />
+                          </Stack>
                         </Box>
                         <Typography variant='body2' className='text-gray'>
                           {
