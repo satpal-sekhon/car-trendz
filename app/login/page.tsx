@@ -1,14 +1,3 @@
-// import React from 'react'
-
-// const page = () => {
-//   return (
-//     <div>
-//       login
-//     </div>
-//   )
-// }
-
-// export default page
 "use client"
 import { Box, Button, TextField,Typography } from "@mui/material";
 import Grid from '@mui/material/Grid';
@@ -41,11 +30,11 @@ export default function Page() {
     }
   };
   return (
-    <>
-      <Grid container spacing={2} className="loginwrapper"  sx={{height:'100vh'}}>
-        <Grid item xs={10} sm={8} md={4}>
+    <div>
+      <Grid container spacing={2} className="loginwrapper shadow-md "  sx={{height:'100vh'}} >
+        <Grid item xs={10} sm={8} md={4} className=" p-2">
           <form action="" onSubmit={handleSubmit}>
-            <div className="loginIconWrapper"> <LoginIcon color="success" className="loginIcon"/></div>
+            <div className="loginIconWrapper"> <LoginIcon className="loginIcon text-darkblue"/></div>
             <Typography variant="h4" textAlign={'center'} mb={3}>Login</Typography>
             <Box>
               <TextField className="emailtextfield" InputProps={{startAdornment: <EmailOutlinedIcon sx={{fontSize:'20px',mr:1,color:'#999'}}/>,}} size="small" color="primary" id="email" label="Email" variant="outlined" autoComplete="off" fullWidth  placeholder="Enter Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
@@ -54,13 +43,12 @@ export default function Page() {
               <TextField className="passwordtextfield" InputProps={{startAdornment: <LockOutlinedIcon sx={{fontSize:'20px',mr:1,color:'#999'}}/>,}} size="small" color="primary" id="Password" type="password" label="Password" variant="outlined" autoComplete="off" fullWidth  placeholder="Enter Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
             </Box>
             <Link href="http://localhost:3000/admin/dashboard">
-            <Button type="submit" className="loginbutton bg-success" variant="contained" color="success" fullWidth>Login</Button>
+            <Button type="submit" className="loginbutton bg-darkblue hover:bg-blue-800" variant="contained" fullWidth>Login</Button>
             </Link>
           </form>
-          <div className="forgotpasswordwrapper">
+          <div className="forgotpasswordwrapper mt-4">
             <Button href="#" variant="text" color="primary">Forgot Password</Button>
           </div>
-          
           <div>
             {
               allEntery.map((item:any)=>{
@@ -74,7 +62,7 @@ export default function Page() {
           </div>
         </Grid>
       </Grid>
-    </>
+    </div>
   );
 }
 

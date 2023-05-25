@@ -113,7 +113,6 @@ export default function MediaCard({ imageUrl, cardTitle, place, modelYear, fuelT
                 </FormGroup>
                 <Stack
                     direction="row"
-                    spacing={2}
                     justifyContent={'space-between'}
                     className='my-10'
                 >
@@ -123,13 +122,12 @@ export default function MediaCard({ imageUrl, cardTitle, place, modelYear, fuelT
 
                     <StyledButton size="small" className='text-capitalize' variant='outlined'>Calculate EMI</StyledButton>
                 </Stack>
-                <Box className='flex-class gap-10' >
-                    <Button size="small" variant='contained' className='bg-primary text-capitalize bg-darkblue' fullWidth>Contact Dealer</Button>
-                    <Button size="small" variant='contained' className='bg-primary text-capitalize bg-darkred' fullWidth sx={{ m: 0, whiteSpace: 'nowrap' }}>Book a Test Drive</Button>
+                <Box className='flex-class gap-2' >
+                    <Button size="small" variant='contained' className='text-capitalize btn-darkblue whitespace-nowrap' fullWidth>Contact Dealer</Button>
+                    <Button size="small" variant='contained' className='text-capitalize btn-darkblue-outline' fullWidth sx={{ m: 0, whiteSpace: 'nowrap' }}>Book a Test Drive</Button>
                 </Box>
-
-                <Checkbox className='absolute top-4 left-4' icon={<FavoriteBorder />} checkedIcon={<Favorite />} checked={checked} onChange={handleCheckboxChange} />
-                <Checkbox className='absolute top-4 right-4' icon={<ShareOutlinedIcon />} checkedIcon={<ShareIcon />} checked={sharechecked} onChange={handleCheckboxshareChange} />
+                <Checkbox className='absolute top-4 left-4 text-darkblue' icon={<FavoriteBorder />} checkedIcon={<Favorite />} checked={checked} onChange={handleCheckboxChange} />
+                <Checkbox className='absolute top-4 right-4 ' icon={<ShareOutlinedIcon />} checkedIcon={<ShareIcon />} checked={sharechecked} onChange={handleCheckboxshareChange} />
 
             </CardContent>
 

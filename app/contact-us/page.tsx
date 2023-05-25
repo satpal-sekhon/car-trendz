@@ -11,7 +11,6 @@ import Footer from '@/components/Footer';
 import TopAppBar from '@/components/TopAppBar';
 import HeaderMiddle from '@/components/HeaderMiddle';
 import DrawerAppBar from '@/components/DrawerAppBar';
-import CarouselComponent from '@/components/Carousel';
 import MediaCard3 from '@/components/card3';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 
@@ -39,60 +38,63 @@ export default function Home() {
       <TopAppBar />
       <HeaderMiddle />
       <DrawerAppBar />
-      {/* <BannerImage/> */}
-
-      <CarouselComponent />
-      <Container maxWidth="lg" >
-        
+      <Container maxWidth="2xl" >
         <div>
-            <Grid container className='my-40 box-shadow-1 car-detail-form car-detail-form-home'>
-              <Grid xs={12} item >
-                <Typography className='car-detail-form-heading md:pl-8' variant='h5'>Enter your car details for a hassle-free experience</Typography>
-                <Grid container >
-                  <Grid xs={12} md={4} item className='md:px-8 my-2'>
+          <Grid container spacing={2} className='my-40'>
+            <Grid xs={12} lg={6} item className='p-4'>
+              <Typography variant='h4' fontWeight={'600'} component={'h2'}>Contact us</Typography>
+              <Typography variant='body1'>
+              Welcome to our car dealing website! We are thrilled to assist you in finding your dream car. At maruti suzuki, we understand the importance of excellent customer service, and our Contact Us page is designed to provide you with a seamless experience. Our dedicated team of professionals is here to answer any questions you may have regarding our inventory, financing options, or trade-in process. Whether you prefer to call, email, or fill out the convenient contact form, we promise to respond promptly and offer personalized guidance. Trust us to make your car buying journey enjoyable and stress-free. Contact us today and lets get started!
+              </Typography>
+            </Grid>
+            <Grid xs={12} lg={6} item className='box-shadow-1 p-4 rounded-lg bg-white'>
+              <Typography className='car-detail-form-heading text-center' variant='h5'>Enter your car details for a hassle-free experience</Typography>
+              <Grid container spacing={2}>
+                <Grid xs={12} md={4} item className=''>
+                  <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                    <AccountCircle className="mr-2 text-darkblue" />
+                    <TextField id="" label="Name" variant="standard" fullWidth />
+                  </Box>
+                </Grid>
+                <Grid xs={12} md={4} item className=''>
+                  <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                    <EmailIcon className="mr-2 text-darkblue" />
+                    <TextField id="" label="Email" variant="standard" fullWidth />
+                  </Box>
+                </Grid>
+                <Grid xs={12} md={4} item className=''>
+                  <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                    <WifiCalling3Icon className="mr-2 text-darkblue" />
+                    <TextField id="" label="Mobile Number" variant="standard" fullWidth />
+                  </Box>
+                </Grid>
+                <Grid xs={12} md={4} item className=''>
+                  <FormControl variant="standard" fullWidth>
                     <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                      <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                      <TextField id="" label="Name" variant="standard" fullWidth />
+                      <AppRegistrationIcon className="mr-2 text-darkblue" />
+                      <TextField id="" label="Registration Number" variant="standard" fullWidth />
                     </Box>
-                  </Grid>
-                  <Grid xs={12} md={4} item className='md:px-8 my-2'>
-                    <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                      <EmailIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                      <TextField id="" label="Email" variant="standard" fullWidth />
-                    </Box>
-                  </Grid>
-                  <Grid xs={12} md={4} item className='md:px-8 my-2'>
-                    <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                      <WifiCalling3Icon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                      <TextField id="" label="Mobile Number" variant="standard" fullWidth />
-                    </Box>
-                  </Grid>
-                  <Grid xs={12} md={4} item className='md:px-8 my-2'>
-                    <FormControl variant="standard" fullWidth>
-                      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                        <AppRegistrationIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                        <TextField id="" label="Registration Number" variant="standard" fullWidth />
-                      </Box>
-                      <FormHelperText id="component-helper-text" className='ml-20 w-full' >
-                        Please enter without any space
-                      </FormHelperText>
-                    </FormControl>
-                  </Grid>
+                    <FormHelperText id="component-helper-text" className='ml-20 w-full' >
+                      Please enter without any space
+                    </FormHelperText>
+                  </FormControl>
+                </Grid>
+                <Grid xs={12} lg={9} item className='my-2 lg:m-0'>
+                  <FormGroup>
+                    <FormControlLabel control={<Checkbox className='text-darkblue'/>} label={<Typography className='text-sm md:text-md'> I authorize Maruti Suzuki India Ltd. or its partners to call me. Please read our <Link href={'/'}>Privacy Policy</Link></Typography>} />
+                  </FormGroup>
+                </Grid>
+                <Grid xs={12} lg={3} item className='my-2 lg:m-0'>
+                  <Button variant='contained' fullWidth className='bg-darkblue '>Submit</Button>
                 </Grid>
               </Grid>
-              <Grid xs={12} lg={9} item className='my-2'>
-                <FormGroup>
-                  <FormControlLabel control={<Checkbox />} label={<Typography className='text-sm md:text-md'> I authorize Maruti Suzuki India Ltd. or its partners to call me. Please read our <Link href={'/'}>Privacy Policy</Link></Typography>} />
-                </FormGroup>
-              </Grid>
-              <Grid xs={12} lg={3} item >
-                <Button variant='contained' fullWidth className='bg-darkblue '>Submit</Button>
-              </Grid>
             </Grid>
-          </div>
+
+          </Grid>
+        </div>
         <Box>
           <Typography variant='h5' fontWeight={'600'} gutterBottom>Get True Value For Your Car</Typography>
-          <Typography variant='body2' fontSize={'13px'} gutterBottom pb={2}>From free home evaluation to complete documentation Maruti Suzuki True Value takes care of everything. Watch the videos to know the benefits of selling car at Maruti Suzuki True Value.</Typography>
+          <Typography variant='body2' fontSize={'13px'} gutterBottom >From free home evaluation to complete documentation Maruti Suzuki True Value takes care of everything. Watch the videos to know the benefits of selling car at Maruti Suzuki True Value.</Typography>
           <Grid container spacing={2} className='my-20'>
             <Grid item xs={12} sm={6} md={4} className='flex'>
               <MediaCard3 imageUrl={'ritz.png'} cardTitle='Swift' description='Making an informed decision is imperative for every car seller to get the right price for their car. Book an evaluation for your pre-owned vehicle now.' />
@@ -119,11 +121,11 @@ export default function Home() {
           <Grid container spacing={2} className='my-20'>
             <Grid item xs={12} sm={6} md={4} className='flex'>
               <MediaCard3 imageUrl={'Ai-1.png'} cardTitle='At Home Evaluation' description='We help ensure that selling your car is a comfortable process. All you have to do is submit your details for the ‘Request for Evaluation’ to opt for our free doorstep Evaluation service. We’ll take care of the rest.' />
-            </Grid> 
+            </Grid>
             <Grid item xs={12} sm={6} md={4} className='flex'>
               <MediaCard3 imageUrl={'Ai-2.png'} cardTitle='Hassle Free' description='Selling a pre-owned car becomes hassle-free when all the paperwork is in place. At Maruti Suzuki True Value, we take complete care of the documentation so that your car selling experience is a convenient one.' />
             </Grid>
-            <Grid item xs={12} sm={6} md={4} className='flex'>
+             <Grid item xs={12} sm={6} md={4} className='flex'>
               <MediaCard3 imageUrl={'Ai-3.png'} cardTitle='AI Based Scientific Engine' description='Maruti Suzuki True Value’s AI based scientific pricing engine is based on several parameters that help us arrive at the most accurate price for your car.' />
             </Grid>
           </Grid>

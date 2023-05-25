@@ -23,6 +23,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Card, CardHeader } from "@mui/material";
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import ScrollToTop from '@/components/ScrollToTop';
+import Footer from '@/components/dasboardFooter';
 
 
 
@@ -209,11 +210,11 @@ export default function Page() {
 
         <Grid container spacing={2} className='mt-2' >
           <Grid item xs={12} md={6}>
-            <Typography variant='body1' className='font-medium'>Good Morning, Anna!</Typography>
-            <Typography variant='caption' className='text-gray'>Here what happening with your store today.</Typography>
+            <Typography variant='h6' className='font-medium'>Good Morning, Anna!</Typography>
+            <Typography variant='body2' className='text-gray'>Here what happening with your store today.</Typography>
           </Grid>
           <Grid item xs={12} md={6} className='text-right'>
-            <Button variant="contained" className='btn-add-product capitalize shadow-none'><AddCircleOutlineIcon className='mr-2 text-sm' /> Add Product</Button>
+            <Button variant="contained" className='capitalize shadow-none bg-darkblue hover:bg-blue-700'><AddCircleOutlineIcon className='mr-2 text-sm' /> Add Product</Button>
           </Grid>
         </Grid>
         <Box sx={{ flexGrow: 1 }}>
@@ -361,8 +362,8 @@ export default function Page() {
             <Grid item xs={12} sm={8}>
               <Card className=' bg-white'>
                   <Stack direction={'row'} className='justify-between bg-white py-2 px-4 mt-2'>
-                    <Typography variant='body1' className='font-semibold'>Recent Orders</Typography>
-                    <Button className='bg-blue-100 px-4 text-sm capitalize hover:bg-blue-400 hover:text-white' startIcon={<PostAddIcon/>}>Generate Report</Button>
+                    <Typography variant='body1' className='text-3xl'>Recent Orders</Typography>
+                    <Button className='bg-darkblue px-4 text-sm capitalize hover:bg-blue-700 hover:text-white' startIcon={<PostAddIcon/>}>Generate Report</Button>
                   </Stack>
                 
                 <DataGrid
@@ -382,6 +383,7 @@ export default function Page() {
         </Box>
         
       </div>
+      <Footer/>
       <ScrollToTop/>
     </div>
   )

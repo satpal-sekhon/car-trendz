@@ -23,6 +23,7 @@ import { ThemeProvider, styled } from '@mui/material/styles';
 import AntSwitch from '../../../styled/admin//setting/Page';
 import Theme from '@/styled/theme/page'
 import ScrollToTop from '@/components/ScrollToTop'
+import Footer from '@/components/dasboardFooter'
 
 
 
@@ -140,20 +141,20 @@ export default function Page() {
 
                                         </Stack>
                                         <Stack direction={'row'} gap={2} className='my-4'>
-                                            <Box className='w-8 h-8 m-1 bg-blue-900 rounded-full flex items-center justify-center'>
+                                            <Box className='w-10 h-8 m-1 bg-blue-900 rounded-full flex items-center justify-center'>
                                                 <LanguageIcon className='text-white text-sm' />
                                             </Box>
                                             <TextField size='small' id="" label="Outlined" variant="outlined" placeholder='www.velzon.com' fullWidth />
 
                                         </Stack>
                                         <Stack direction={'row'} gap={2} className='my-4'>
-                                            <Box className='w-8 h-8 m-1 bg-green-600 rounded-full flex items-center justify-center'>
+                                            <Box className='w-10 h-8 m-1 bg-green-600 rounded-full flex items-center justify-center'>
                                                 <SportsBasketballIcon className='text-white text-sm' />
                                             </Box>
                                             <TextField size='small' id="" label="Outlined" variant="outlined" placeholder='@dave_adame' fullWidth />
                                         </Stack>
                                         <Stack direction={'row'} gap={2} className='my-4'>
-                                            <Box className='w-8 h-8 m-1 bg-red-400 rounded-full flex items-center justify-center'>
+                                            <Box className='w-10 h-8 m-1 bg-red-400 rounded-full flex items-center justify-center'>
                                                 <PinterestIcon className='text-white text-sm' />
                                             </Box>
                                             <TextField size='small' id="" label="Pinterest" variant="outlined" placeholder='Advance Dave' fullWidth />
@@ -211,7 +212,7 @@ export default function Page() {
                                             </Grid>
                                             <Grid item xs={12} className='text-right' >
                                                 <Button variant='contained' className='text-white bg-blue-800 hover:bg-blue-900 capitalize mx-2'>Updata</Button>
-                                                <Button variant='contained' className='text-green-800 bg-green-100 hover:bg-green-800 hover:text-white capitalize mx-2'>Cancel</Button>
+                                                <Button variant='contained' className='text-white bg-red-600 hover:bg-red-800 capitalize mx-2'>Cancel</Button>
                                             </Grid>
 
                                         </Grid>
@@ -232,7 +233,7 @@ export default function Page() {
                                                 <Button className='underline underline-offset-1 capitalize text-blue-900 font-light'>Forgot Password?</Button>
                                             </Grid>
                                             <Grid item xs={12} className='text-right'>
-                                                <Button className='capitalize bg-green-400 hover:bg-green-600 text-white'>Change Password</Button>
+                                                <Button className='capitalize bg-green-600 hover:bg-green-800 text-white'>Change Password</Button>
                                             </Grid>
 
                                             <Grid item xs={12} className='text-right' >
@@ -349,7 +350,7 @@ export default function Page() {
                                                     <TextField id="" multiline rows={4} label="Company Name" variant="outlined" fullWidth value={`You always want to make sure that your fonts work well together and try to limit the number of fonts you use to three or less. Experiment and play around with the fonts that you already have in the software you're working with reputable font websites. `} />
                                                 </Grid>
                                                 <Grid item xs={12} md={12} className='text-right'>
-                                                    <Button className='bg-green-600 text-white hover:bg-green-800 capitalize'  color='success'>Delete</Button>
+                                                    <Button className='text-white bg-red-600 hover:bg-red-800 capitalize '  color='success'>Delete</Button>
                                                 </Grid>
                                                 <Grid item xs={12} md={12} >
                                                     <Stack direction={'row'} className='gap-4'>
@@ -466,6 +467,7 @@ export default function Page() {
                         </Grid>
                     </div>
                 </div>
+                <Footer/>
                 <ScrollToTop/>
             </div>
         // </ThemeProvider>

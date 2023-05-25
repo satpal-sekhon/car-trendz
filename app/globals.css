@@ -212,17 +212,15 @@ body {
 .headermiddle-logo-2 {
   /* display: flex; */
   align-items: center;
-  justify-content: flex-end;
 }
 
 .box-shadow-1 {
   box-shadow: 0 0 5px rgba(43, 51, 149, 0.27);
 }
-
-.car-detail-form {
-  padding: 40px 20px;
-  border-radius: 10px;
+.box-shadow-gray {
+  box-shadow: 0 0 6px #999;
 }
+
 
 .text-gray {
   color: #636363;
@@ -282,7 +280,7 @@ body {
 }
 
 .loginIcon {
-  font-size: 50px;
+  font-size: 70px;
 }
 
 .loginIconWrapper {
@@ -547,6 +545,10 @@ body {
 .cursor-pointer-wrapper input{
   cursor: pointer;
 }
+.c-border-bottom{
+  border-bottom: 1px solid #ccc;
+}
+
 @media screen and (max-width:768px) {
   .banner-image {
     height: 300px;
@@ -556,6 +558,9 @@ body {
   .content-wrapper{
     margin-top: 64px;
     margin-left: 0px;
+  }
+  .admin-dialog>div{
+    margin: 16px;
   }
 
 }

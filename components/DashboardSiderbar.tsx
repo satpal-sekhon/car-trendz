@@ -44,22 +44,21 @@ export default function ResponsiveDrawer(props: Props) {
   };
 
   const drawer = (
-    <div>
+    <div className='bg-darkblue h-full'>
       {/* <Toolbar /> */}
-      <div className='h-16 flex items-center justify-center'>
+      <div className='h-16 flex items-center justify-center bg-white'>
         <Link href={'http://localhost:3000/admin/dashboard'}>
           <Image className='' src={'/maruti-suziki-logo.png'} width={'220'} height={'200'} alt='logo'></Image>
         </Link>
       </div>
       <Divider />
       <List className='p-0'>
-        <Typography className='px-4 capitalize'>Menu</Typography>
         {[{ text: 'Dashboard', link: '/admin/dashboard' },].map((item, index) => (
           <ListItem key={item.text} disablePadding>
             <Link href={item.link} className='w-full'>
               <ListItemButton >
-                <ListItemIcon>
-                  {item.text === 'Home' ? <DashboardIcon /> : <MailIcon />}
+                <ListItemIcon className='text-white'>
+                  {item.text === 'Dashboard' ? <DashboardIcon /> : <MailIcon />}
                 </ListItemIcon>
                 <ListItemText primary={item.text} />
               </ListItemButton>
@@ -72,7 +71,7 @@ export default function ResponsiveDrawer(props: Props) {
           <ListItem key={item.text} disablePadding>
             <Link href={item.link} className='w-full'>
               <ListItemButton>
-                <ListItemIcon>
+                <ListItemIcon className='text-white'>
                   {item.text === 'Profile' ? <AccountCircleIcon /> : <ManageAccountsIcon />}
                 </ListItemIcon>
                 <ListItemText primary={item.text} />
@@ -81,12 +80,12 @@ export default function ResponsiveDrawer(props: Props) {
           </ListItem>
         ))}
       </List>
-      <List className='p-0'>
+      <List className='p-0' >
         {[{ text: 'cars listing', link: '/admin/cardata' }].map((item, index) => (
           <ListItem key={item.text} disablePadding>
             <Link href={item.link} className='w-full'>
               <ListItemButton>
-                <ListItemIcon>
+                <ListItemIcon className='text-white'>
                   {item.text === 'data upload' ? <UploadFileIcon /> : <TableChartIcon />}
                 </ListItemIcon>
                 <ListItemText primary={item.text} />

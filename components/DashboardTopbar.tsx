@@ -25,6 +25,13 @@ import Logout from '@mui/icons-material/Logout';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import Image from 'next/image';
+import { Button, Stack } from '@mui/material';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import WarningAmberIcon from '@mui/icons-material/WarningAmber';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 
 
 
@@ -59,7 +66,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
     '& .MuiInputBase-input': {
         padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create('width'),
         width: '100%',
@@ -82,7 +88,7 @@ export default function PrimarySearchAppBar() {
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setNotification(event.currentTarget);
     };
-    const handleClose = () => {
+    const handleNotificationClose = () => {
         setNotification(null);
     };
 
@@ -133,8 +139,274 @@ export default function PrimarySearchAppBar() {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+            <MenuItem onClick={handleMenuClose}>
+                <ListItemIcon>
+                    <AccountBoxIcon fontSize="small" />
+                </ListItemIcon>
+                Profile
+            </MenuItem>
+            <MenuItem onClick={handleMenuClose}>
+                <ListItemIcon>
+                    <ManageAccountsIcon fontSize="small" />
+                </ListItemIcon>
+                My account
+            </MenuItem>
+            <MenuItem onClick={handleMenuClose}>
+                <ListItemIcon>
+                    <PersonAdd fontSize="small" />
+                </ListItemIcon>
+                Add another account
+            </MenuItem>
+            <MenuItem onClick={handleMenuClose}>
+                <ListItemIcon>
+                    <Settings fontSize="small" />
+                </ListItemIcon>
+                Settings
+            </MenuItem>
+            <MenuItem onClick={handleMenuClose}>
+                <ListItemIcon>
+                    <Logout fontSize="small" />
+                </ListItemIcon>
+                Logout
+            </MenuItem>
+        </Menu>
+    );
+    const notificationmenu = 'account-menu';
+    const renderNotificationMenu = (
+        <Menu
+            anchorEl={notification}
+            id={notificationmenu}
+            open={opennotification}
+            onClose={handleNotificationClose}
+            onClick={handleNotificationClose}
+            PaperProps={{
+                elevation: 0,
+                sx: {
+                    maxWidth: '500px',
+                    width: '100%',
+                    filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                    mt: 1.5,
+                    '& .MuiAvatar-root': {
+                        width: 32,
+                        height: 32,
+                        ml: -0.5,
+                        mr: 1,
+                    },
+                    '&:before': {
+                        content: '""',
+                        display: 'block',
+                        position: 'absolute',
+                        top: 0,
+                        right: 14,
+                        width: 10,
+                        height: 10,
+                        bgcolor: 'background.paper',
+                        transform: 'translateY(-50%) rotate(45deg)',
+                        zIndex: 0,
+                    },
+                    '@media screen and (max-width: 600px)': {
+                        maxWidth: '340px',
+                        width: '100%',
+                    }
+                },
+            }}
+            transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+            anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+        >
+            <Stack direction={'row'} className='justify-end' >
+                <Button size='small' variant='contained' className='bg-darkblue capitalize m-2 mt-0'>mark All read</Button>
+            </Stack>
+            <Box sx={{
+                maxHeight: '500px',
+                overflowY: 'scroll',
+
+            }}>
+
+                <MenuItem onClick={handleNotificationClose} className='c-border-bottom'>
+
+                    <div className='relative mr-2 bg-gray-100'>
+                        <Image className=' rounded ' src={'/avatar-1.jpg'} width={'40'} height={'40'} alt='notification image'></Image>
+                        <div className='absolute -right-[2px] -bottom-[2px] w-2 h-2 bg-green-600 rounded-full'></div>
+                        {/* <div className='absolute -right-[2px] -bottom-[2px] w-2 h-2 bg-red-600 rounded-full'></div> */}
+                        {/* <div className='absolute -right-[2px] -bottom-[2px] w-2 h-2 bg-yellow-600 rounded-full'></div> */}
+                    </div>
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Stack direction={'row'} className='justify-between'>
+                            <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                            <Typography className='text-xs italic text-gray-700 hover:text-gray-900'>mark as read</Typography>
+                        </Stack>
+                    </Box>
+                </MenuItem>
+                <MenuItem onClick={handleNotificationClose} className='c-border-bottom'>
+                    <Image className='mr-2 rounded' src={'/avatar-1.jpg'} width={'30'} height={'30'} alt='notification image'></Image>
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                    </Box>
+                </MenuItem>
+                <MenuItem onClick={handleNotificationClose} className='c-border-bottom'>
+                    <Image className='mr-2 rounded' src={'/avatar-1.jpg'} width={'30'} height={'30'} alt='notification image'></Image>
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                    </Box>
+                </MenuItem>
+                <MenuItem onClick={handleNotificationClose} className='c-border-bottom'>
+                    <Image className='mr-2 rounded' src={'/avatar-1.jpg'} width={'30'} height={'30'} alt='notification image'></Image>
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                    </Box>
+                </MenuItem>
+                <MenuItem onClick={handleNotificationClose} className='c-border-bottom'>
+                    <Image className='mr-2 rounded' src={'/avatar-1.jpg'} width={'30'} height={'30'} alt='notification image'></Image>
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                    </Box>
+                </MenuItem>
+                <MenuItem onClick={handleNotificationClose} className='c-border-bottom'>
+                    <Image className='mr-2 rounded' src={'/avatar-1.jpg'} width={'30'} height={'30'} alt='notification image'></Image>
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                    </Box>
+                </MenuItem>
+                <MenuItem onClick={handleNotificationClose} className='c-border-bottom'>
+                    <Image className='mr-2 rounded' src={'/avatar-1.jpg'} width={'30'} height={'30'} alt='notification image'></Image>
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                    </Box>
+                </MenuItem>
+                <MenuItem onClick={handleNotificationClose} className='c-border-bottom'>
+                    <Image className='mr-2 rounded' src={'/avatar-1.jpg'} width={'30'} height={'30'} alt='notification image'></Image>
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                    </Box>
+                </MenuItem>
+
+            </Box>
+        </Menu>
+    );
+    const messagemenu = 'message-menu';
+    const rendermessageMenu = (
+        <Menu
+            anchorEl={message}
+            id={messagemenu}
+            open={openmessage}
+            onClose={handleCloseMessage}
+            onClick={handleCloseMessage}
+            PaperProps={{
+                elevation: 0,
+                sx: {
+                    maxWidth: '500px',
+                    width: '100%',
+                    filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                    mt: 1.5,
+                    '& .MuiAvatar-root': {
+                        width: 32,
+                        height: 32,
+                        ml: -0.5,
+                        mr: 1,
+                    },
+                    '&:before': {
+                        content: '""',
+                        display: 'block',
+                        position: 'absolute',
+                        top: 0,
+                        right: 14,
+                        width: 10,
+                        height: 10,
+                        bgcolor: 'background.paper',
+                        transform: 'translateY(-50%) rotate(45deg)',
+                        zIndex: 0,
+                    },
+                    '@media screen and (max-width: 600px)': {
+                        maxWidth: '340px',
+                        width: '100%',
+                    }
+                },
+            }}
+            transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+            anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+        >
+            <Stack direction={'row'} className='justify-end' >
+                <Button size='small' variant='contained' className='bg-darkblue capitalize m-2 mt-0'>mark All read</Button>
+            </Stack>
+            <Box sx={{
+                maxHeight: '500px',
+                overflowY: 'scroll',
+            }}>
+
+                <MenuItem onClick={handleCloseMessage} className='c-border-bottom bg-gray-100'>
+                    <div className='relative mr-2'>
+                        <Image className=' rounded ' src={'/avatar-1.jpg'} width={'40'} height={'40'} alt='notification image'></Image>
+                        <div className='absolute -right-[2px] -bottom-[2px] w-2 h-2 bg-green-600 rounded-full'></div>
+                        {/* <div className='absolute -right-[2px] -bottom-[2px] w-2 h-2 bg-red-600 rounded-full'></div> */}
+                        {/* <div className='absolute -right-[2px] -bottom-[2px] w-2 h-2 bg-yellow-600 rounded-full'></div> */}
+                    </div>
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Stack direction={'row'} className='justify-between'>
+                            <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                            <Typography className='text-xs italic text-gray-700 hover:text-gray-900'>mark as read</Typography>
+                        </Stack>
+                    </Box>
+                </MenuItem>
+                <MenuItem onClick={handleCloseMessage} className='c-border-bottom'>
+                    <CheckCircleOutlineIcon className='mr-2 text-green-600' />
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                    </Box>
+                </MenuItem>
+                <MenuItem onClick={handleCloseMessage} className='c-border-bottom'>
+                    <WarningAmberIcon className='mr-2 text-yellow-600' />
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                    </Box>
+                </MenuItem>
+                <MenuItem onClick={handleCloseMessage} className='c-border-bottom'>
+                    <HighlightOffIcon className='mr-2 text-red-600' />
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                    </Box>
+                </MenuItem>
+                <MenuItem onClick={handleCloseMessage} className='c-border-bottom'>
+                    <Image className='mr-2 rounded' src={'/avatar-1.jpg'} width={'30'} height={'30'} alt='notification image'></Image>
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                    </Box>
+                </MenuItem>
+                <MenuItem onClick={handleCloseMessage} className='c-border-bottom'>
+                    <Image className='mr-2 rounded' src={'/avatar-1.jpg'} width={'30'} height={'30'} alt='notification image'></Image>
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                    </Box>
+                </MenuItem>
+                <MenuItem onClick={handleCloseMessage} className='c-border-bottom'>
+                    <Image className='mr-2 rounded' src={'/avatar-1.jpg'} width={'30'} height={'30'} alt='notification image'></Image>
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                    </Box>
+                </MenuItem>
+                <MenuItem onClick={handleCloseMessage} className='c-border-bottom'>
+                    <Image className='mr-2 rounded' src={'/avatar-1.jpg'} width={'30'} height={'30'} alt='notification image'></Image>
+                    <Box>
+                        <Typography variant='body1' className='text-sm whitespace-normal'>My accountadashdksajhd asdjhsa jkdhas kdaskjhdkjas hdjkah sd j khas jkdh aksj</Typography>
+                        <Typography className='text-xs italic text-gray-500'>july 23 at 9:15am</Typography>
+                    </Box>
+                </MenuItem>
+
+            </Box>
         </Menu>
     );
 
@@ -155,19 +427,28 @@ export default function PrimarySearchAppBar() {
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem>
-                <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+            <MenuItem onClick={handleOpenMessage}>
+                <IconButton
+                    size="large"
+                    aria-label="show 4 new mails"
+                    color="inherit"
+                    aria-controls="message-menu"
+                    aria-haspopup="true"
+                >
                     <Badge badgeContent={4} color="error">
                         <MailIcon />
                     </Badge>
                 </IconButton>
                 <p>Messages</p>
             </MenuItem>
-            <MenuItem >
+            <MenuItem onClick={handleClick}>
                 <IconButton
                     size="large"
                     aria-label="show 17 new notifications"
                     color="inherit"
+                    aria-controls="account-menu"
+                    aria-haspopup="true"
+                 aria-expanded={opennotification ? 'true' : undefined}
                 >
                     <Badge badgeContent={17} color="error">
                         <NotificationsIcon />
@@ -193,108 +474,36 @@ export default function PrimarySearchAppBar() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            {/* <AppBar position="static" className='appbar-top shadow-none bg-transparent'> */}
             <Toolbar className='p-0'>
-                {/* <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="open drawer"
-                        sx={{ mr: 2 }}
-                    >
-                        <MenuIcon />
-                    </IconButton> */}
-                {/* <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ display: { xs: 'none', sm: 'block' } }}
-                    >
-                        MUI
-                    </Typography> */}
-                <Search className='bg-gray-200' >
+                <Search className='bg-gray-200 hover:bg-gray-300' >
                     <SearchIconWrapper>
                         <SearchIcon />
                     </SearchIconWrapper>
                     <StyledInputBase
                         placeholder="Search…"
                         inputProps={{ 'aria-label': 'search' }}
+                        className='cursor-pointer-wrapper'
                     />
                 </Search>
                 <Box sx={{ flexGrow: 1 }} />
-                <Box sx={{ display: { xs: 'none', md: 'flex' },gap:'10px' }}>
+                <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: '10px',alignItems:'center' }}>
                     <IconButton
                         onClick={handleOpenMessage}
-                        size="large" aria-label="show 4 new mails" color="inherit"
+                        size="large"
+                        aria-label="show 4 new mails"
+                        color="inherit"
                         aria-controls={openmessage ? 'message-menu' : undefined}
                         aria-haspopup="true"
                         aria-expanded={openmessage ? 'true' : undefined}
+                        className='max-h-[48px]'
                     >
                         <Badge badgeContent={4} color="error">
                             <MailOutlineIcon />
                         </Badge>
+
                     </IconButton>
-                    {/* <Menu
-                        anchorEl={notification}
-                        id="message-menu"
-                        open={openmessage}
-                        onClose={handleCloseMessage}
-                        onClick={handleCloseMessage}
-                        PaperProps={{
-                            elevation: 0,
-                            sx: {
-                                overflow: 'visible',
-                                filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                                mt: 1.5,
-                                '& .MuiAvatar-root': {
-                                    width: 32,
-                                    height: 32,
-                                    ml: -0.5,
-                                    mr: 1,
-                                },
-                                '&:before': {
-                                    content: '""',
-                                    display: 'block',
-                                    position: 'absolute',
-                                    top: 0,
-                                    right: 14,
-                                    width: 10,
-                                    height: 10,
-                                    bgcolor: 'background.paper',
-                                    transform: 'translateY(-50%) rotate(45deg)',
-                                    zIndex: 0,
-                                },
-                            },
-                        }}
-                        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-                    >
-                        <MenuItem onClick={handleCloseMessage}>
-                            <Avatar /> Profile
-                        </MenuItem>
-                        <MenuItem onClick={handleCloseMessage}>
-                            <Avatar /> My account
-                        </MenuItem>
-                        <Divider />
-                        <MenuItem onClick={handleCloseMessage}>
-                            <ListItemIcon>
-                                <PersonAdd fontSize="small" />
-                            </ListItemIcon>
-                            Add another account
-                        </MenuItem>
-                        <MenuItem onClick={handleCloseMessage}>
-                            <ListItemIcon>
-                                <Settings fontSize="small" />
-                            </ListItemIcon>
-                            Settings
-                        </MenuItem>
-                        <MenuItem onClick={handleCloseMessage}>
-                            <ListItemIcon>
-                                <Logout fontSize="small" />
-                            </ListItemIcon>
-                            Logout
-                        </MenuItem>
-                    </Menu> */}
+
+
                     <IconButton
                         onClick={handleClick}
                         size="large"
@@ -303,72 +512,13 @@ export default function PrimarySearchAppBar() {
                         aria-controls={opennotification ? 'account-menu' : undefined}
                         aria-haspopup="true"
                         aria-expanded={opennotification ? 'true' : undefined}
+                        className='max-h-[48px]'
                     >
                         <Badge badgeContent={17} color="error">
                             <NotificationsNoneIcon />
                         </Badge>
                     </IconButton>
-                    <Menu
-                        anchorEl={notification}
-                        id="account-menu"
-                        open={opennotification}
-                        onClose={handleClose}
-                        onClick={handleClose}
-                        PaperProps={{
-                            elevation: 0,
-                            sx: {
-                                overflow: 'visible',
-                                filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                                mt: 1.5,
-                                '& .MuiAvatar-root': {
-                                    width: 32,
-                                    height: 32,
-                                    ml: -0.5,
-                                    mr: 1,
-                                },
-                                '&:before': {
-                                    content: '""',
-                                    display: 'block',
-                                    position: 'absolute',
-                                    top: 0,
-                                    right: 14,
-                                    width: 10,
-                                    height: 10,
-                                    bgcolor: 'background.paper',
-                                    transform: 'translateY(-50%) rotate(45deg)',
-                                    zIndex: 0,
-                                },
-                            },
-                        }}
-                        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-                    >
-                        <MenuItem onClick={handleClose}>
-                            <Avatar /> Profile
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                            <Avatar /> My account
-                        </MenuItem>
-                        <Divider />
-                        <MenuItem onClick={handleClose}>
-                            <ListItemIcon>
-                                <PersonAdd fontSize="small" />
-                            </ListItemIcon>
-                            Add another account
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                            <ListItemIcon>
-                                <Settings fontSize="small" />
-                            </ListItemIcon>
-                            Settings
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                            <ListItemIcon>
-                                <Logout fontSize="small" />
-                            </ListItemIcon>
-                            Logout
-                        </MenuItem>
-                    </Menu>
+
                     <IconButton
                         size="large"
                         edge="end"
@@ -377,7 +527,7 @@ export default function PrimarySearchAppBar() {
                         aria-haspopup="true"
                         onClick={handleProfileMenuOpen}
                         color="inherit"
-                        className='bg-gray-200 rounded-none'
+                        className='rounded-none max-h-[48px]'
                     >
                         <AccountCircleOutlinedIcon />
                         <Box className="flex items-start justify-center flex-col ml-2">
@@ -399,7 +549,8 @@ export default function PrimarySearchAppBar() {
                     </IconButton>
                 </Box>
             </Toolbar>
-            {/* </AppBar> */}
+            {rendermessageMenu}
+            {renderNotificationMenu}
             {renderMobileMenu}
             {renderMenu}
         </Box>

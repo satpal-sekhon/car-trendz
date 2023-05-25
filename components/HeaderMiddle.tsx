@@ -1,30 +1,9 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
 import Image from 'next/image';
-import SplitButton from './SplitButton';
-import PersonIcon from '@mui/icons-material/Person';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 import { useState } from 'react';
-import { Button, Typography } from '@mui/material';
-import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
-import TextField from '@mui/material/TextField';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from 'next/link';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import GoogleIcon from '@mui/icons-material/Google';
-import CloseIcon from '@mui/icons-material/Close';
-
-
+import { Slide } from '@mui/material';
 
 
 
@@ -50,15 +29,15 @@ export default function HeaderMiddle() {
   return (
     <div>
       <Grid container
-        className='py-[10px] px-[15px] md:py-[15px] md:px-[60px] d-flex items-center'
+        className='py-[10px] px-[15px] md:py-[15px] md:px-[60px] gap-4 md:gap-0'
       >
-        <Grid item xs={6}>
-          <Image src="/true-value-logo.png" width={'204'} height={'33'} alt='true value logo' />
+        <Grid item xs={12} sm={6} className='justify-center md:justify-start flex'>
+          <Image className='' src="/true-value-logo.png" width={'204'} height={'33'} alt='true value logo' />
         </Grid>
 
-        <Grid item xs={6} textAlign={'right'} className='headermiddle-logo-2 flex'>
-          <Image className='hidden md:block' src="/maruti-suziki-logo.png" width={'209'} height={'23'} alt='maruti suziki logo' />
-          <Box className='block md:hidden'>
+        <Grid item xs={12} sm={6}  className='headermiddle-logo-2 flex justify-center md:justify-end'>
+          <Image className='' src="/maruti-suziki-logo.png" width={'209'} height={'23'} alt='maruti suziki logo' />
+          {/* <Box className='block md:hidden'>
             <SplitButton index1="Hindi" index2="English" />
             <Button variant="outlined" onClick={handleClickOpen} className='p-0 min-w-0'>
               <PersonIcon className='text-darkblue bg-gray-300' />
@@ -99,7 +78,7 @@ export default function HeaderMiddle() {
                 </DialogContentText>
               </DialogContent>
             </Dialog>
-          </Box>
+          </Box> */}
 
         </Grid>
       </Grid>

@@ -474,7 +474,7 @@ export default function Page() {
                         </Grid>
                         <Grid item xs={12}>
                             <Stack direction="row" className='mb-2 justify-between'>
-                                <Typography variant='h4'>View Similar Cars</Typography>
+                                <Typography variant='h4' className='text-2xl md:text-3xl'>View Similar Cars</Typography>
                                 <Button variant='contained' className='btn-darkblue'>View All</Button>
                             </Stack>
                             <Grid container spacing={2}>
@@ -494,7 +494,7 @@ export default function Page() {
 
                         </Grid>
                         <Grid item xs={12} className='my-6'>
-                            <Typography variant='h4'>Recommended Picks in New Delhi</Typography>
+                            <Typography variant='h4' className='text-2xl md:text-3xl'>Recommended Picks in New Delhi</Typography>
                             <Grid container spacing={2} className='mt-6' >
                                 <Grid item xs={12} md={6} className='' >
                                     <Box className='border p-4 flex items-center justify-center gap-8' >

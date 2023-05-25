@@ -23,6 +23,7 @@ import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import ScrollToTop from '@/components/ScrollToTop'
+import Footer from '@/components/dasboardFooter'
 
 
 
@@ -736,6 +737,7 @@ export default function Page() {
                     </Grid>
                 </div>
             </div>
+            <Footer/>
             <ScrollToTop/>
         </div>
     )

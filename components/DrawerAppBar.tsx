@@ -74,7 +74,7 @@ interface Props {
 
 const drawerWidth = 240;
 const navItems = [
-    { name: 'SELL', link: 'http://localhost:3000/sell' },
+    { name: 'Contact', link: 'http://localhost:3000/contact-us' },
     { name: 'Buy Car', link: 'http://localhost:3000/buycar' },
     { name: 'Car Detail', link: 'http://localhost:3000/cardetail' },
 ];

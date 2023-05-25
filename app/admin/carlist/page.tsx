@@ -282,8 +282,8 @@ export default function Page() {
                         </Grid>
                     </form>
                 </div>
-                <Footer />
             </div>
+                <Footer />
             <ScrollToTop />
         </div>
     )
