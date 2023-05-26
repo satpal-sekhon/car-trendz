@@ -18,6 +18,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled } from '@mui/system';
 import { useTheme } from '@mui/material/styles';
 import Footer from '@/components/Footer';
+import TopAppBar from '@/components/TopAppBar';
+import HeaderMiddle from '@/components/HeaderMiddle';
 
 const StyledBox = styled(Box)(({ theme }) => ({
     textAlign: 'center',
@@ -90,16 +92,16 @@ export default function Page() {
     // };
     const [slideLoanvalue, setSlideLoanValue] = React.useState<number | string | Array<number | string>>(
         30,
-      );
-    
-      const handleSliderLoanChange = (event: Event, newValue: number | number[]) => {
+    );
+
+    const handleSliderLoanChange = (event: Event, newValue: number | number[]) => {
         setSlideLoanValue(newValue);
-      };
-    
+    };
+
     //   const handleInputLoanChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     //     setSlideLoanValue(event.target.value === '' ? '' : Number(event.target.value));
     //   };
-    
+
     //   const handleLoanBlur = () => {
     //     if (slideLoanvalue < '0') {
     //         setSlideLoanValue(0);
@@ -111,6 +113,8 @@ export default function Page() {
 
     return (
         <>
+            <TopAppBar />
+            <HeaderMiddle />
             <DrawerAppBar />
             <div className='section-bg-color'>
                 <Container maxWidth="xl" className=''>
@@ -343,7 +347,7 @@ export default function Page() {
             <div>
                 <Container maxWidth="xl">
                     <Grid container>
-                        <Grid xs={12} md={9}>
+                        <Grid item xs={12} md={9}>
                             <Typography variant='h4' my={3} color={'primary'}>Frequently asked questions</Typography>
                             <div>
                                 <Accordion>
@@ -352,7 +356,7 @@ export default function Page() {
                                         aria-controls="panel1a-content"
                                         id="panel1a-header"
                                     >
-                                        <Typography>What is the Maruti Suzuki Smart Finance ?</Typography>
+                                        <Typography variant='h6' fontWeight={'400'}>What is the Maruti Suzuki Smart Finance ?</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>
@@ -366,7 +370,7 @@ export default function Page() {
                                         aria-controls="panel2a-content"
                                         id="panel2a-header"
                                     >
-                                        <Typography>Is the platform only for salaried customers?</Typography>
+                                        <Typography variant='h6' fontWeight={'400'}>Is the platform only for salaried customers?</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>
@@ -380,7 +384,7 @@ export default function Page() {
                                         aria-controls="panel3a-content"
                                         id="panel3a-header"
                                     >
-                                        <Typography>How many cities are covered under Maruti Suzuki Smart Finance?</Typography>
+                                        <Typography variant='h6' fontWeight={'400'}>How many cities are covered under Maruti Suzuki Smart Finance?</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>
@@ -394,7 +398,7 @@ export default function Page() {
                                         aria-controls="panel4a-content"
                                         id="panel4a-header"
                                     >
-                                        <Typography>Are the offers competitive compared to other online marketplaces?</Typography>
+                                        <Typography variant='h6' fontWeight={'400'}> Are the offers competitive compared to other online marketplaces?</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>
@@ -405,7 +409,7 @@ export default function Page() {
                                 <Button variant='contained' className='bg-darkblue my-2'>View more questions</Button>
                             </div>
                         </Grid>
-                        <Grid xs={12} md={3}>
+                        <Grid item xs={12} md={3}>
                             <Image src={'/faq-img.png'} width={'400'} height={'200'} alt='faq-img.png'></Image>
                         </Grid>
                     </Grid>
@@ -414,7 +418,7 @@ export default function Page() {
             <div>
                 <Container maxWidth="xl">
                     <Grid container className='my-6'>
-                        <Grid xs={12}>
+                        <Grid item xs={12}>
                             <Typography variant='h5' textAlign={'center'} color={'primary'}> Maruti Suzuki Smart Finance: Finance Your New Car in Just a Few Clicks</Typography>
                             <Typography variant='h6' textAlign={'center'} color={'primary'}> The Easiest Way to Buy Your Dream Car</Typography>
                             <Typography>
